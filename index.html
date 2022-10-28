@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assents/style/style.css">
+
+    <script type="module" src="assents/js/map.js" defer></script>
+    <script src="assents/js/api.js" defer></script>
+    <script type="module" src="assents/js/index.js" defer ></script>
+</head>
+<body>
+    <div class="wrapper">
+        <section>
+            <header class="main-header">
+                
+                <div class="logo-wrap">
+                    <a aria-label="Notion – Home" class="logo" href="#">
+                        <img src="assents/image/Notion_app_logo.png" alt="logo" class="media logo-media">
+                        <span class="logo-title">Logo</span>
+                    </a>
+                </div>
+
+                <div class="desktop-actions">
+                    <nav class="navigation primary">
+
+                            <ul class="nav-list nav-list-sales">
+                                <li class="nav-item">
+                                    <div class="label">
+                                        Lorem ipsum
+                                    </div>
+                                </li>
+                                <div class="divider "></div>
+                                <li class="submenu">
+                                    <li class="submenu-item">
+                                        <a href=""> Login</a>
+                                    </li>
+                                    <button class="submenu-item primary-button">Lorem, ipsum dolor.</button>
+                                </li>
+                            </ul>
+
+                    </nav>
+                </div>
+                
+                <div class="mobile-actions">
+
+                    <button class="action primary-button">
+                        <a role="button" href="#" class="button-link">Try notion free</a>
+                    </button>
+                    <button aria-haspopup="menu" aria-expanded="true"  class="menu-toggle">
+                        <svg viewBox="0 0 30 30" class="menu" style="width: 22px; height: 100%; display: block; fill: inherit; flex-shrink: 0;"><path d="M2,4v2h26V4H2z M2,16h26v-2H2V16z M2,26h26v-2H2V26z"></path></svg>
+                    </button>
+                </div>
+            </header>
+        </section>
+
+        <main class="main-content">
+            <section class="section">
+                <section class="content mobile-center">
+                    <header class="content-header header">
+                        <h1 class="content-title page-title">Lorem ipsum dolor sit amet..</h1>
+                        <h2 class="content-subtitle page-subtitle">
+                            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit.
+                        </h2>
+                    </header>
+                    <div class="content-body mobile-center">
+                        <button class="submenu-item primary-button">Lorem ipsum dolor.</button>
+                    </div>
+                    <footer class="section-footer mobile-center">
+                        <p class="footer-p">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aperiam animi corporis officia nesciunt illum mini.
+                        </p>
+                    </footer>
+                </section>
+                <aside class="section-aside-banner mobile-center">
+                    <img src="assents/image/home-page-hero.avif" alt="ilustration" class="image aside-image">
+                </aside>
+            </section>
+            
+            <section class="section row-reverse">
+                <div class="wrapper justify-end">
+                    <section class="content">
+                        <header class="content-header header primary-header">
+                            <h1 class="content-title">Selecione sua cidade:</h1>
+                    
+                        </header>
+                        <div class="content-body">
+                            <form action="" method="get" id="form">
+                                <ul class="flex flex-column">
+                                    <li class="flex align-center">
+                                        <input type="radio" name="valor"
+                                        id="caetite" value="-14.0649, -42.4859">
+                                        <label for="caetite" class="">Caetite</label>
+                                    </li>
+                                    <li class="flex align-center">
+                                        <input type="radio" name="valor"
+                                        id="caetite" value="-14.7674, -42.6588">
+                                        <label for="caetite" class="">Urandi</label>
+                                    </li>
+                                </ul>
+                                <div class="button__container flex flex-end">
+                                    <button type="submit">Enviar</button>
+                                </div>
+                            </form>
+                    
+                        </div>
+                        <footer class="section-footer">
+                            <p >
+                                Meça a distancia da sua cidade ao evento
+                            </p>
+                        </footer>
+                    </section>
+                </div>
+                <aside class="section-aside-banner" >
+                    <div class="section-image" id="map"></div>
+                </aside>
+            </section>
+            
+            <section class="gallery flex flex-wrap justify-space-between gap-1 pd-1">
+            </section>
+
+        </main>
+    </div>
+</body>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsEgIJoShrSPCaiBYbMFLgYb7knyBaWaQ&callback=initMap&v=weekly"
+      defer
+></script>
+
+</html>
