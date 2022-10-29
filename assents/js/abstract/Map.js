@@ -24,8 +24,7 @@ export class Map {
         }); 
       
         if (props.markers ) { 
-            this.markers = props.markers.map((position, index) => {
-                if (index === 0) this.origin = position;
+            this.markers = props.markers.map((position) => {
                 return this.createMarker(position)
             }); 
         }
@@ -44,22 +43,22 @@ export class Map {
     }
 
     changeMarkerPosition(newPosition) {
-        this.destination = newPosition
         if (this.markers.length < 2) {
             this.markers.push( this.createMarker(newPosition) )
-        } else {
-            let last = this.markers.length - 1;
-            this.markers[last].setPosition(newPosition)
+            return
         }
+        let last = this.markers.length - 1;
+        this.markers[last].setPosition(newPosition)
 
     }
 
-    async createRoute() {
+    async createRoute(origin, destination) {
         
-        let origin = `${this.origin.lat}, ${this.origin.lng}`
-        let destination = `${this.destination.lat},${this.destination.lng}`
+        origin = `${origin.lat}, ${origin.lng}`
+        destination = `${destination.lat},${destination.lng}`
         
         this.directionsRenderer.setMap(this.map)
+
         let response = await this.directionsService.route({
             origin: origin ,
             destination: destination,

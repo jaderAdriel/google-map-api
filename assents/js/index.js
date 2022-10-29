@@ -18,7 +18,7 @@ function initMap() {
         e.preventDefault()
         let position =  getSelectedChoise(form, 'radio');
         map.changeMarkerPosition(position);
-        map.createRoute();
+        map.createRoute(guanambi, position);
     });
 
 }
