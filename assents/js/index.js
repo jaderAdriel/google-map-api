@@ -1,27 +1,31 @@
 
-import { Map } from './map.js';
-
+import { Map } from './abstract/Map.js';
 
 function initMap() {
-    // The location of guanambi-14.283216, -42.683485
+
     const guanambi = { lat: -14.283216, lng: -42.683485 };
-    
-    var map = new Map({
+
+    const map = new Map({
       zoom: 10, 
       center: guanambi, 
-      markers: guanambi, 
+      markers: [guanambi], 
       element: document.getElementById("map")
     })
+
+
+    const form = document.getElementById('form');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault()
+        let position =  getSelectedChoise(form, 'radio');
+        map.changeMarkerPosition(position);
+        map.createRoute();
+    });
+
 }
 window.initMap = initMap;
 
-const form = document.getElementById('form');
 
-form.addEventListener('submit', (e) => {
-    let position =  getSelectedChoise(form, 'radio');
-    map.changeMarkerPosition(position);
-    e.preventDefault()
-});
+
 
 
 function getSelectedChoise(form, typeInput) {
