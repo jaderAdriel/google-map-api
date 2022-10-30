@@ -338,7 +338,7 @@ body > .wrapper {
 .section {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
 }
 
 
@@ -349,11 +349,13 @@ body > .wrapper {
     gap: var(--padding-m);
 }
 
+
+
 .section-aside-banner {
     flex-basis: 50%;
     background-color: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: end;
 }
 
 .content-header {
@@ -373,6 +375,8 @@ body > .wrapper {
     width: 100%;
     height: auto;
 }
+
+
 
 #map {
     width: 100%;
@@ -491,7 +495,6 @@ button[type="submit"] {
 }
 
 
-
 input[type='radio']{
     margin-right: var(--f-s);
     width: 1.4em; height: 1.4em;
@@ -501,6 +504,9 @@ input[type='radio']{
 .f-l { font-size: var(--f-m); }
 .flex { display: flex;}
 .gap-1 {gap: 1em;}
+.gap-2 {gap: 2em;}
+.gap-3 {gap: 3em;}
+.gap-4 {gap: 4em;}
 .pd-1 {padding: 1em;}
 .flex-wrap {flex-wrap: wrap;}
 .flex-nowrap {flex-wrap: nowrap;}
@@ -508,6 +514,7 @@ input[type='radio']{
 .flex-column { flex-direction: column;}
 .row-reverse { flex-direction: row-reverse;}
 .justify-baseline{ justify-content: baseline;}
+.justify-start{ justify-content: start;}
 .justify-space-between{ justify-content: space-between;}
 .justify-space-around{ justify-content: space-around;}
 .justify-space-evely{ justify-content: space-evenly;}
@@ -516,6 +523,10 @@ input[type='radio']{
 .align-baseline{ align-items: baseline;}
 .align-center{ align-items: center;}
 .align-end{ align-items: end;}
+
+.max-content {
+    width: max-content;
+}
 
 @media (max-width: 1100px) {
     .row-reverse { flex-direction: column;}

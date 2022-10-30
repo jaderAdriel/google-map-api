@@ -16,7 +16,7 @@ function initMap() {
     const form = document.getElementById('form');
     form.addEventListener('submit', (e) => {
         e.preventDefault()
-        let position =  getSelectedChoise(form, 'radio');
+        let position =  getSelectedChoise(form);
         map.changeMarkerPosition(position);
         map.createRoute(guanambi, position);
     });
@@ -28,8 +28,8 @@ window.initMap = initMap;
 
 
 
-function getSelectedChoise(form, typeInput) {
-    let inputs = Array.from(form.querySelectorAll(`input[type=${typeInput}]`))
+function getSelectedChoise(form) {
+    let inputs = Array.from(form.querySelectorAll(`input[type=radio]`))
     
     for(let i =0; i < inputs.length; i++) {
         if (inputs[i].checked) return getPosition(inputs[i].value);
@@ -37,7 +37,7 @@ function getSelectedChoise(form, typeInput) {
 }
 
 function getPosition(value){
-    value = value.split(", ")
+    value = value.split(",")
     for(let i =0; i < value.length; i++) {
         value[i] = Number(value[i])
     }

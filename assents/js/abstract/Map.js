@@ -52,7 +52,7 @@ export class Map {
 
     }
 
-    async createRoute(origin, destination) {
+    async createRoute(origin, destination, selectedMode = 'DRIVING') {
         
         origin = `${origin.lat}, ${origin.lng}`
         destination = `${destination.lat},${destination.lng}`
@@ -62,9 +62,9 @@ export class Map {
         let response = await this.directionsService.route({
             origin: origin ,
             destination: destination,
-            travelMode : google.maps.TravelMode.DRIVING
+            travelMode : google.maps.TravelMode[selectedMode]
         })
-
+        
         this.directionsRenderer.setDirections(response)
     }
 }
