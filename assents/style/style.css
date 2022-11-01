@@ -358,6 +358,43 @@ body > .wrapper {
     justify-content: end;
 }
 
+.content-footer {
+    max-width: 30em;
+}
+
+#map-info {
+    width: 35%;
+    max-width: 30em;
+}
+
+.info {
+    position: relative;
+    flex-grow: 1;
+    height: 3em;
+    padding: 1em;
+    display: flex;
+    justify-content: baseline;
+    padding-left: 45px;
+    align-items: center;
+    border: 1px inset rgb(0, 0, 0, 0.5);
+}
+
+.info::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: calc(50% - 15px);
+    left: 10px;
+    background-size: cover;
+}
+#distanceRouteMap::after  {
+    background-image: url('../image/icons-sys/car.png');
+}
+#durationRouteMap::after  {
+    background-image: url('../image/icons-sys/duration.png');
+}
+
 .content-header {
     max-width: 30em;
     display: flex;

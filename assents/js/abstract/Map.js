@@ -7,8 +7,9 @@ export class Map {
     markers;
     directionsService = new google.maps.DirectionsService();
     directionsRenderer = new google.maps.DirectionsRenderer({ draggable: false});
-    origin;
-    destination;
+
+    durationRoute;
+    distanceRoute;
 
     constructor(props) {
         if (props.zoom) this.zoom = props.zoom;
@@ -65,6 +66,17 @@ export class Map {
             travelMode : google.maps.TravelMode[selectedMode]
         })
         
+        this.getDistanceAndDurationOfRoute(response)
+
         this.directionsRenderer.setDirections(response)
+
+        return response;
     }
+
+    getDistanceAndDurationOfRoute(response) {
+        this.distanceRoute =  response['routes'][0]['legs'][0]['distance']['text']
+        this.durationRoute =  response['routes'][0]['legs'][0]['duration']['text']
+    }
+
+
 }

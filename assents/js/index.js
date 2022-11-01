@@ -15,10 +15,14 @@ function initMap() {
 
     const form = document.getElementById('form');
     form.addEventListener('submit', (e) => {
+
         e.preventDefault()
         let position =  getSelectedChoise(form);
+
         map.changeMarkerPosition(position);
-        map.createRoute(guanambi, position);
+        map.createRoute(guanambi, position)
+        .then(() => setRouteInformations(map.distanceRoute, map.durationRoute) )
+        
     });
 
 }
@@ -42,4 +46,12 @@ function getPosition(value){
         value[i] = Number(value[i])
     }
     return { lat: value[0], lng: value[1] }
+}
+
+function setRouteInformations(distance, duration) {
+    let distanceElement = document.getElementById('distanceRouteMap');
+    let durationElement = document.getElementById('durationRouteMap');
+
+    distanceElement.innerText = `${distance}`;
+    durationElement.innerText = `${duration}`;
 }
