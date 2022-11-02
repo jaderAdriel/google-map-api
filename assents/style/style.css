@@ -12,7 +12,9 @@
     font-family: 'Poppins', sans-serif;
     border: 0;
 }
-
+.shadow {
+    box-shadow: 0px 0px 5px 1px rgba(71,71,71,0.2);
+}
 .f-l { font-size: var(--f-m); }
 .flex { display: flex;}
 .gap-1 {gap: 1em;}
@@ -495,12 +497,12 @@ body > .wrapper {
         font-size: var(--f-x);
         line-height: 1.1;
     }
-    /* .gallery, .gallery * {
-        appearance: none;
-        display: none;
-        opacity: 0;
-        width: 0;
-    } */
+    .shadow {
+        box-shadow: none;
+    }
+    .content {
+        padding: 0;
+    }
 }
 
 @media (max-width: 300px){
@@ -580,9 +582,7 @@ input[type='search'] {
     background-image: url('../image/icons-sys/duration.png');
 }
 
-.shadow {
-    box-shadow: 0px 0px 5px 1px rgba(71,71,71,0.2);
-}
+
 
 .map-wrapper {
     position: relative;
