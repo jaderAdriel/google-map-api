@@ -118,7 +118,8 @@ body > .wrapper {
 }
 
 .logo-title {
-    font-weight: 600;
+    margin-left: var(--f-ss);
+    font-weight: 500;
     font-size: var(--f-m);
 }
 
@@ -426,6 +427,7 @@ body > .wrapper {
 }
  
 .button__container {
+    height: 2em;
     width: 100%;
 }
 
@@ -616,7 +618,10 @@ input[type='search'] {
   }
 
   #buttonClick {
+    height: 100%;
+    padding-left: var(--padding-s);
+    padding-right: var(--padding-s);
     border: 1px inset var(--color-100);
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 5px;
   }
