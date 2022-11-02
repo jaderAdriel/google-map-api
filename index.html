@@ -9,6 +9,7 @@
 
     <script type="module" src="assents/js/abstract/Map.js" defer></script>
     <script type="module" src="assents/js/index.js" defer ></script>
+    <script type="module" src="assents/js/api.js" defer ></script>
 </head>
 <body>
     <div class="wrapper">
@@ -55,9 +56,12 @@
             </header>
         </section>
 
-        <main class="main-content">
-            <section class="section justify-space-between">
-                <section class="content mobile-center">
+        <main class="main-content flex flex-column">
+
+            <section class="section primary-page-section flex gap-2 flex-row justify-space-between mobile-center">
+
+                <section class="content mobile-center flex flex-column">
+
                     <header class="content-header header">
                         <h1 class="content-title page-title">Lorem ipsum dolor sit amet..</h1>
                         <h2 class="content-subtitle page-subtitle">
@@ -72,60 +76,104 @@
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aperiam animi corporis officia nesciunt illum mini.
                         </p>
                     </footer>
+
                 </section>
+
                 <aside class="section-aside-banner mobile-center">
                     <img src="assents/image/home-page-hero.avif" alt="ilustration" class="image aside-image">
                 </aside>
+
             </section>
             
-            <section class="section row-reverse gap-2 justify-space-between">
-                <div class="wrapper" id="map-info">
-                    <section class="content">
-                        <header class="content-header header primary-header">
-                            <h1 class="content-title">Selecione sua cidade:</h1>
+            <section class="section flex gap-2 justify-space-between row-reverse">
+
+                <section class="content shadow flex-basis-1 flex flex-column gap-1">
+                    <header class="content-header header primary-header">
+                        <h1 class="content-title">Selecione sua cidade:</h1>
+                
+                    </header>
+                    <div class="content-body flex flex-column flex-grow-1 gap-2">
+                        <form action="" method="get" id="form" class=" flex flex-column gap-1">
+                            
+                            <ul class="flex flex-column">
+                                <li class="flex align-center">
+                                    <input type="radio" name="valor"
+                                    id="caetite" value="-14.0649, -42.4859">
+                                    <label for="caetite" class="">Caetite</label>
+                                </li>
+                                <li class="flex align-center">
+                                    <input type="radio" name="valor"
+                                    id="caetite" value="-14.7674, -42.6588">
+                                    <label for="caetite" class="">Urandi</label>
+                                </li>
+                                <li class="flex align-center">
+                                    <input type="radio" name="valor"
+                                    id="caetite" value="-14.2681, -43.1613">
+                                    <label for="caetite" class="">Palmas de Monte Alto</label>
+                                </li>
+                                <li class="flex align-center">
+                                    <input type="radio" name="valor"
+                                    id="caetite" value="-14.3207, -42.9792">
+                                    <label for="caetite" class="">Mutãs</label>
+                                </li>
+                                <li class="flex align-center">
+                                    <input type="radio" name="valor"
+                                    id="caetite" value="-14.30149, -42.69333">
+                                    <label for="caetite" class="">IF Baiano campus guanambi</label>
+                                </li>
+                            </ul>
+                           
+                            <div class="button__container flex justify-space-between flex-wrap">
+                                <button type="submit">Enviar</button>
+                                <div id="buttonClick" class="shadow pd-s">Pesquisar por minha Localização</div>
+                            </div>
+                        </form>
+                    </div>
+                    <footer class="section-footer flex justify-space-between gap-1 flex-wrap">
+                        <div class="info" id="durationRouteMap">-- --</div>
+                        <div class="info" id="distanceRouteMap">-- --</div>
+                    </footer>
+                </section>
+
+                <div class="wrapper map-wrapper flex-basis-1">
+                    <div id="map">
+                    </div>
+                    <div class="loader-wrapper" id="loader-wrapper">
+                        <div class="loader" id="loader"></div>
+                    </div>
                     
-                        </header>
-                        <div class="content-body">
-                            <form action="" method="get" id="form">
-                                <ul class="flex flex-column">
-                                    <li class="flex align-center">
-                                        <input type="radio" name="valor"
-                                        id="caetite" value="-14.0649, -42.4859">
-                                        <label for="caetite" class="">Caetite</label>
-                                    </li>
-                                    <li class="flex align-center">
-                                        <input type="radio" name="valor"
-                                        id="caetite" value="-14.7674, -42.6588">
-                                        <label for="caetite" class="">Urandi</label>
-                                    </li>
-                                    <li class="flex align-center">
-                                        <input type="radio" name="valor"
-                                        id="caetite" value="-14.2681, -43.1613">
-                                        <label for="caetite" class="">Palmas de Monte Alto</label>
-                                    </li>
-                                    <li class="flex align-center">
-                                        <input type="radio" name="valor"
-                                        id="caetite" value="-14.3207, -42.9792">
-                                        <label for="caetite" class="">Mutãs</label>
-                                    </li>
-                                </ul>
-                                <div class="button__container flex flex-end">
-                                    <button type="submit">Enviar</button>
-                                </div>
-                            </form>
-                    
-                        </div>
-                        <footer class="section-footer flex justify-space-between gap-1">
-                            <div class="info" id="durationRouteMap">--</div>
-                            <div class="info" id="distanceRouteMap">--</div>
-                        </footer>
-                    </section>
                 </div>
-                <aside class="section-aside-banner" >
-                    <div class="section-image" id="map"></div>
-                </aside>
             </section>
     
+            <section class="section flex flex-row justify-space-between gap-2 ">
+
+                <section class="content  shadow  flex flex-column flex-basis-1">
+
+                    <header class="content-header header flex-grow-1">
+                        <h1 class="content-title ">Lorem ipsum dolor sit amet..</h1>
+                        <h2 class="content-subtitle page-subtitle">
+                            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit.
+                        </h2>
+                    </header>
+                    <div class="content-body  flex-grow-1">
+                        <p class="">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aperiam animi corporis officia nesciunt illum mini.
+                        </p>       
+                                
+                    </div>
+                    <footer class="section-footer">
+                        <p class="footer-p">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aperiam animi corporis officia nesciunt illum mini.
+                        </p>   
+                    </footer>
+
+                </section>
+
+                <aside class="section-aside-banner gallery mobile-center flex-basis-1 flex justify-end flex-wrap">
+                    
+                </aside>
+
+            </section>
 
         </main>
     </div>
