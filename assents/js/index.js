@@ -19,11 +19,15 @@ window.initMap = initMap;
 
 
 function main(map, startPositionn) {
+
     const form = document.getElementById('form');
+    const guanambi = { lat: -14.277228, lng: -42.702106 };
+
     form.addEventListener('submit', (e) => {
         e.preventDefault()
         traceRoute(map, startPositionn, getSelectedChoise(form))
     });
+
     document.getElementById('buttonClick').addEventListener('click', (e) => {
         if (!navigator.geolocation) {
             alert('Erro! não da pra localizar vocẽ')
@@ -35,6 +39,22 @@ function main(map, startPositionn) {
             traceRoute(map, startPositionn, location)
         },handle_errors);
     })
+
+    
+    const autocomplete = new google.maps.places.Autocomplete(
+        document.getElementById("autocomplete"),
+        {
+            componentRestrictions: { country: "br" },
+            fields: ["address_components", "geometry"]
+        }
+    )
+
+    autocomplete.addListener('place_changed', (e) => {
+        let local = autocomplete.getPlace();
+        let position = { lat: local.geometry.location.lat(), lng: local.geometry.location.lng() }
+        traceRoute(map, guanambi,position)
+    });
+
 }
 
 

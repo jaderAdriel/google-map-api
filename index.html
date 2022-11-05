@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find route</title>
+    <title>FindRoute</title>
     <link rel="stylesheet" href="assents/style/style.css">
     <link rel="shortcut icon" href="assents/image/favicon.ico" type="image/x-icon">
 
@@ -122,15 +122,34 @@
                                     id="caetite" value="-14.30149, -42.69333">
                                     <label for="caetite" class="">IF Baiano campus guanambi</label>
                                 </li>
+                                <div class="separator flex flex-column align-center">
+                                    <span class="text">OU</span>
+                                    <div class="line"></div>
+                                </div>
+                                <li class="field">
+                                    <input 
+                                        type="search" 
+                                        name="places" 
+                                        placeholder=" "
+                                        autocomplete="off"
+                                        id="autocomplete"
+                                    >
+                                    <label for="places">Pesquise por uma outra</label>
+
+                                </li>
+                                
                             </ul>
                            
                             <div class="button__container flex justify-space-between gap-1 flex-wrap align-end">
                                 <button type="submit">Enviar</button>
-                                <div id="buttonClick" class="shadow flex justify-center align-center">Minha Localização</div>
+                                <div id="buttonClick" class="shadow flex  gap-1 align-center">
+                                    <img src="assents/image/marker.png" class="marker" alt=""> Minha Localização
+                                </div>
                             </div>
+
                         </form>
                     </div>
-                    <footer class="section-footer flex justify-space-between gap-1 flex-wrap">
+                    <footer class="section-footer flex justify-space-between  flex-wrap">
                         <div class="info" id="durationRouteMap">-- --</div>
                         <div class="info" id="distanceRouteMap">-- --</div>
                     </footer>
@@ -179,7 +198,7 @@
         </main>
     </div>
 </body>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsEgIJoShrSPCaiBYbMFLgYb7knyBaWaQ&callback=initMap&v=weekly"
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsEgIJoShrSPCaiBYbMFLgYb7knyBaWaQ&libraries=places&callback=initMap&v=weekly"
       defer
 ></script>
 
