@@ -7,12 +7,12 @@
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/jaderAdriel/google-map-api?style=for-the-badge)
 
 
-> This project aims to get information about directions using the Google Maps API
+> This project aims to get information about two points on Google Maps.
 
 ## Features
 you can do the following actions:
 
-* Get distance and time travel using to a point using your approximate location from the browser.
-* Get distance and time travel using to a point using your location searching on a field.
+* Get distance and travel time using to a point using your approximate location from the browser.
+* Get distance and travel time  using to a point using your location searching on a field.
 
 
